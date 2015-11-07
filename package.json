@@ -12,9 +12,9 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/iandreichyn/twoplan#readme"
+  "homepage": "https://bitbucket.org/iandreichyn/twoplan#readme",
   "dependencies": {
     "ejs": "2.3.3",
     "express": "4.13.3"
-  },
+  }
 }
