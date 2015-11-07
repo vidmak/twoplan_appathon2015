@@ -3,11 +3,17 @@
 		width: 320px;
 	}
 }
+html {
+	width: 100%;
+    overflow: hidden;
+}
+}
 body {
 	font-size: 20px;
 	font-family: Raleway;
 	color:#CCC;
 	background-color: #4B7DB9;
+	box-sizing: content-box;
 }
 div#wrapper{
 
