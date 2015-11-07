@@ -1,3 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*				//3F51B5
+				#2196F3
+				#9C27B0
+				#4CAF50
+				#8BC34A
+				#CDDC39
+				#FFC107
+				#FF9800
+				#F44336	
+*/
 @media only screen and (max-device-width: 320px) {
 	div#wrapper {
 		width: 320px;
@@ -9,9 +24,9 @@ body {
 	width: 100%;
 	font-size: 20px;
 	font-family: Raleway;
-	color:#CCC;
-	background-color: #4B7DB9;
-	box-sizing: content-box;
+	color:#999;
+	background-color: #EEE;
+	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
 }
@@ -28,12 +43,7 @@ div#wrapper{
 	background-color: #7db94b;
 }
 
-ul {
-	width: 90%;
-}
-
 li {
-
 	border-radius: 2px;
 	color:333;
 	font-size: 20px;
@@ -44,14 +54,15 @@ li {
 	display: block;
 	width: 90%;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
-    background: #EEE;
+    background: #8BC34A;
     margin-top: 10px;
+    clear:both;
 }
 
 button {
-	/*background-color: #7db94b;*/
+	background-color: #4B7DB9;
 	border-radius: 2px;
-	color:333;
+	color:#EEE;
 	font-size: 20px;
 	border: none;
 	font-weight: 400;
@@ -60,7 +71,18 @@ button {
 	display: block;
 	width: 90%;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
-    background: #FE3;
+}
+
+.col1 {
+    display: inline-block;
+    width:50%;
+    box-sizing: border-box;
+}
+
+.col2 {
+    display: inline-block;
+    width:50%;
+    box-sizing: border-box;
 }
 
 button:active {
@@ -68,6 +90,16 @@ button:active {
 }
 
 button:focus {outline:0;}
+div.top {
+	font-size: 20px;
+	font-weight: 400;
+	padding: 25px;
+	display: block;
+	color:#EEE;
+	margin-left: -2%;
+	background-color: #4B7DB9;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
+}
 
 p {
 	font-size: 20px;
@@ -93,7 +125,7 @@ input {
 
 label
 {
-	margin-right:5%; 
+	margin-left:5%; 
 }
 
 .total
@@ -106,15 +138,17 @@ ul
 {
 	list-style-type: none;
 	padding: 10px 0px 25px 0px;
-	margin: 40px auto;
+	margin: 0px auto;
 	display: block;
 	width: 90%;
+	margin-bottom: 40px;
 }
+
 li
 {
 	display: block;
 	float: left;
-	/* width: 100%; */
+	width: 94%; 
 	clear: both;
 	margin-bottom:5px;
 }
@@ -133,6 +167,7 @@ li > b
 	text-align: right;
 	margin-top: -30px;
 }
+
 div#s0 li > b
 {
 	font-size: 100%;
@@ -143,6 +178,7 @@ div#s0 li > b
 	text-align: right;
 	margin-top: -25px;
 }
+
 h1
 {
 	font-weight: 200;
@@ -151,12 +187,23 @@ h1
 	text-align: center;
 	padding: 10px 5px;
 }
+
+h2
+{
+	font-weight: 200;
+	margin:0 auto;
+	width: 75%;
+	text-align: center;
+	padding: 10px 5px;
+}
+
 .btn-ia
 {
-	background-color: #fafafa;
+	background-color: #4B7DB9;
 	color: #4B7DB9;
 }
+
 .btn-a
 {
-	background-color: #fA0;
+	background-color: #4B7DB9;
 }
