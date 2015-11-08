@@ -17,55 +17,56 @@ app.set('view engine', 'ejs');
 onclick="document.location+='main';return false;";
 
 app.get('/mydata', function(request, response) {
-	var url = 'http://twoplan.mybluemix.net/status?user=Igor';
-	http.get(url, function(res){
-		var body = '';
-
-		res.on('data', function(chunk){
-			body += chunk;
-		});
-
-		res.on('error', function (err) {
-			console.log("timeout");
-               var data = {
+	var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,
-				igor : igor,
-				our : igor + 1200,
-				maryna : 1200,
-				newgoal : newgoal
-			}
-         })
-
-		res.on('end', function(){
-			var r = JSON.parse(body);
-			console.log("Got a response: ", r);
-			igor =  r.rows[0].value;
-			var data = {
-				allaccounts: 1275,
-				myexpenses : 1100,
-				igor : Math.round(igor,0),
+				igor : Math.round(igor, 0),
 				our : Math.round(igor + 1200,0),
 				maryna : 1200,
 				newgoal : newgoal
 			}
-
+			console.log("data get");
 			response.writeHead(200, { 'Content-Type': 'application/json', "Cache-Control": "no-cache","Access-Control-Allow-Origin":"*" });
 			response.write(JSON.stringify(data));
 			response.end();
-		});
+	//var url = 'http://twoplan.mybluemix.net/status?user=Igor';
+// 	http.get(url, function(res){
+// 		var body = '';
 
-	}).on('error', function(e){
-		console.log("Got an error: ", e);
-	});
+// 		res.on('data', function(chunk){
+// 			body += chunk;
+// 		});
+
+// 		res.on('error', function (err) {
+// 			console.log("timeout");
+//                var data = {
+// 				allaccounts: 1275,
+// 				myexpenses : 1100,
+// 				igor : igor,
+// 				our : igor + 1200,
+// 				maryna : 1200,
+// 				newgoal : newgoal
+// 			}
+//          })
+
+// 		res.on('end', function(){
+// 			var r = JSON.parse(body);
+// 			console.log("Got a response: ", r);
+// 			igor =  r.rows[0].value;
+			
+// 		});
+
+// 	}).on('error', function(e){
+// 		console.log("Got an error: ", e);
+// 	});
 });
 
 
 app.get('/goals', function(request, response) {
-	data = { };
-	response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
-	response.write(JSON.stringify(data));
-	response.end();
+ 	data = { };
+ 	response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
+ 	response.write(JSON.stringify(data));
+ 	response.end();
 });
 
 
@@ -75,6 +76,12 @@ app.post('/saveexpense', function(req, res){
     res.send("test");
 }); 
 
+
+app.get('/saveexpense', function(req, res){
+    console.dir(req.body);
+    igor = igor + 34;
+    res.send("test");
+}); 
 /*
 app.get('/saveexpense', function(request, response) {
 	console.log(request);
