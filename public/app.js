@@ -1,10 +1,6 @@
 $(document).ready(
 	function(){
-		$("div#wrapper > div").hide();
-
-    $("#maintotal").change(function(){
-      $("#goaldate").val("September 2017");
-    });
+		//$("div#wrapper > div").hide();
     if (document.location.hash) {
       $('div#wrapper li > a[href=' + document.location.hash + ']').addClass('active');
       $('div#wrapper  div' + document.location.hash).show();
@@ -26,5 +22,24 @@ $(document).ready(
      }
      )
     onclick="document.location+='main';return false;"
+    $("#maintotal").change(function(){
+        $("#goaldate").val("September 2017");
+    });
+    $("#btnshare").click(function(){
+      var settings = {
+        "async": false,
+        "crossDomain": true,
+        "url": "/bluemix/post/addExpenses",
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+        },
+        "data": "{\n\"user\": \"Igor\",\n\"description\": \"some expense\",\n\"amount\": 5\n}"
+      }
+      console.log($("#expensetotal").val());
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    });
   }
   );
