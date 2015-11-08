@@ -77,7 +77,7 @@ app.get('/goals', function(request, response) {
 
 app.post('/saveexpense', function(req, res){
     console.log(req.body.amount);
-    igor = igor + req.body.amount;
+    igor = igor + parseFloat(req.body.amount);
     res.send(req.body);
 }); 
 
