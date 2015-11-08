@@ -1,6 +1,6 @@
 $(document).ready(
 	function(){
-		//$("div#wrapper > div").hide();
+		$("div#wrapper > div").hide();
     if (document.location.hash) {
       $('div#wrapper li > a[href=' + document.location.hash + ']').addClass('active');
       $('div#wrapper  div' + document.location.hash).show();
@@ -30,15 +30,23 @@ $(document).ready(
     function refresh(){
       $.ajax({
         url: "mydata",
-        context: document.body
-      }).done(function(data) {
+        context: document.body,
+        error: function(e,d){
+         console.log(e);
+         setTimeout(refresh,2000);
+       },
+       success: function(data){
+        if (data.newgoal == 1) {
+        }   
         var template = $('#toptemplate').html();
         Mustache.parse(template); 
         var rendered = Mustache.render(template, data);
         $('#toprender').html(rendered);
         console.log("update.done");
-        setTimeout(refresh,1000);
-      });
+        setTimeout(refresh,2000);
+      },
+      timeout: 3000 
+    });
     }
 
 
@@ -49,12 +57,12 @@ $(document).ready(
       var settings = {
         "async": false,
         "crossDomain": true,
-        "url": "/bluemix/post/addExpenses",
+        "url": "saveexpense",
         "method": "POST",
         "headers": {
           "cache-control": "no-cache",
         },
-        "data": "{\n\"user\": \"Igor\",\n\"description\": \"some expense\",\n\"amount\": 5\n}"
+        "data": "{\n\"user\": \"Igor\",\n\"description\": \"some expense\",\n\"amount\": 34\n}"
       }
       console.log($("#expensetotal").val());
       $.ajax(settings).done(function (response) {

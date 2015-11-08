@@ -23,7 +23,7 @@
 body {
 	width: 100%;
 	font-size: 20px;
-	font-family: Raleway;
+	font-family: 'Roboto', sans-serif;
 	color:#999;
 	background-color: #EEE;
 	box-sizing: border-box;
@@ -53,7 +53,7 @@ li {
 	margin: 30px auto;
 	display: block;
 	width: 90%;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.26);
     background: #8BC34A;
     margin-top: 10px;
     clear:both;
@@ -70,7 +70,7 @@ button {
 	margin: 30px auto;
 	display: block;
 	width: 90%;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .col1 {
@@ -99,7 +99,7 @@ div.top {
 	color:#EEE;
 	margin-left: -2%;
 	background-color: #4B7DB9;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .top > b {
@@ -115,7 +115,7 @@ p {
 	color:#666;
 	margin-left: -2%;
 	background-color: #fff;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 input {

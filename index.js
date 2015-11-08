@@ -10,17 +10,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-	PostBlueMix(5);
-});
+
+onclick="document.location+='main';return false;";
 
 app.get('/mydata', function(request, response) {
-
-
-	onclick="document.location+='main';return false;"
-
 	var url = 'http://twoplan.mybluemix.net/status?user=Igor';
-
 	http.get(url, function(res){
 		var body = '';
 
@@ -28,11 +22,15 @@ app.get('/mydata', function(request, response) {
 			body += chunk;
 		});
 
+		res.on('error', function (err) {
+                console.log("Got error: " + err.message);
+                cb(err, null);
+         })
 
 		res.on('end', function(){
 			var r = JSON.parse(body);
 			console.log("Got a response: ", r);
-			var igor =  r.rows[0].value;
+			varigor =  r.rows[0].value;
 			var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,

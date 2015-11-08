@@ -1,6 +1,6 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
@@ -11,20 +11,21 @@
 	<div id="wrapper">
 		<div id="main" style="margin-top:-20px;">
 			<div id="toptemplate" class="template">	
-			    <b>{{newgoal}}November</b> all accounts <b>{{allaccounts}}</b><br>
+			    <b>November</b> all accounts <b>{{allaccounts}}</b><br>
 				my expenses <b>{{myexpenses}}</b><br/>
 					igor <b> {{igor}} </b>, Our <b>{{our}}</b>, Maryna  <b>{{maryna}}</b>
 			</div>	
 			<div id="toprender" class="top"></div>
 			<br>
-			<h2>Goals</h2>	
+			<h2>Goals</h2>
+			<div style="clear:both"></div>	
 			<ul>
-				<li style="background:#CDDC39;"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> <img src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Home-2-icon.png" width="50px"><br/>Moving in 6 month <b>in 25 days</b></li>
+				<li style="background:#CDDC39;"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> <img src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Home-2-icon.png" width="50px"><br/>Moving in 6 month <b style="margin-top:-80px">in 25 days</b></li>
 				<li><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> Ski trip<b>in 3 month</b></li>
 				<li><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-User-Male-3-icon.png" width="50px"> BMW i3 <b>7 years</b></li>
 			</ul>	
-			<button type="" href="#expense_new" class="">record expense</button>	
-			<button type="" href="#goal_create" class="">+ Goal</button>
+			<button type="" href="#expense_new" class="">RECORD</button>	
+			<button type="" href="#goal_create" class="">ADD GOAL</button>
 		</div>
 		<div id="goal_create">
 			<h1>New goal</h1>
@@ -33,8 +34,8 @@
 			<input type="text" class="total" value="3000" id="goaltotal"></text>
 			<label>Date:</label>
 			<input type="text" value="October 2018" id="goaldate"></text>
-			<button type="" href="#main">my</button>
-			<button type="" href="#main">share</button>
+			<button type="" href="#main">MY</button>
+			<button type="" href="#main">SHARE</button>
 		</div>
 <!-- 		<div id="goal_edit">
 			<h1>Edit goal</h1>
@@ -54,15 +55,15 @@
 			<h1>record</h1>
 			<input type="text" class="total" value="34.09" id="expensetotal" type = "number"></text>
 			<input type="text" value="@aldi #pb+2punkt #Paulaner #Schweppes #Lambstake"></text>
-			<button type="">Take photo...</button>
-			<button type="" href="#category">Personal</button>
-			<button type="" href="#main" id="btnshare">Share</button>
+			<button type="">TAKE A PHOTO...</button>
+			<button type="" href="#category">PERSONAL</button>
+			<button type="" href="#main" id="btnshare">SHARE</button>
 		</div>
 		<div id="learn">
 			<h1>Learning</h1>
 			<h1>100 EUR merchani info bla bla</h1>
 			<h1>56 EUR Aldi  yesterdya</h1>
-			<button type="" href="#category">Personal</button>
+			<button type="" href="#category">PERSONAL</button>
 			<button type="" href="#main">Share</button>
 		</div>
 <!-- 		<div id="category">
