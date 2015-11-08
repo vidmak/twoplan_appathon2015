@@ -1,7 +1,7 @@
 var express = require('express');
 var http = require('http');
 var app = express();
-
+var newgoal =  0;
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -35,9 +35,10 @@ app.get('/mydata', function(request, response) {
 			var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,
-				igor : r.rows[0].value,
-				our : r.rows[0].value + 1200,
-				maryna : 1200
+				igor : Math.round(r.rows[0].value,0),
+				our : Math.round(r.rows[0].value + 1200),
+				maryna : 1200,
+				newgoal : newgoal
 			}
 
 			response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
@@ -61,6 +62,20 @@ app.get('/goals', function(request, response) {
 
 app.get('/saveexpense', function(request, response) {
 	PostBlueMix();
+	response.end();
+});
+
+
+app.get('/addgoal', function(request, response) {
+	newgoal = 1;
+	response.write(newgoal);
+	response.end();
+});
+
+
+app.get('/confirmgoal', function(request, response) {
+	newgoal = 0;
+	response.write(newgoal);
 	response.end();
 });
 
