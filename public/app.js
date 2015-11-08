@@ -57,7 +57,7 @@ $(document).ready(
       var settings = {
         "async": false,
         "crossDomain": true,
-        "url": "saveexpense",
+        "url": "/saveexpense",
         "method": "POST",
         "headers": {
           "cache-control": "no-cache",

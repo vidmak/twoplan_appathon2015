@@ -4,6 +4,7 @@ var app = express();
 var newgoal =  0;
 
 var igor = 30;
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -39,7 +40,7 @@ app.get('/mydata', function(request, response) {
 		res.on('end', function(){
 			var r = JSON.parse(body);
 			console.log("Got a response: ", r);
-			varigor =  r.rows[0].value;
+			igor =  r.rows[0].value;
 			var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,
@@ -49,7 +50,7 @@ app.get('/mydata', function(request, response) {
 				newgoal : newgoal
 			}
 
-			response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
+			response.writeHead(200, { 'Content-Type': 'application/json', "Cache-Control": "no-cache","Access-Control-Allow-Origin":"*" });
 			response.write(JSON.stringify(data));
 			response.end();
 		});
@@ -68,12 +69,21 @@ app.get('/goals', function(request, response) {
 });
 
 
+
+app.post('/saveexpense', function(req, res){
+    console.dir(req.body);
+    res.send("test");
+}); 
+
+/*
 app.get('/saveexpense', function(request, response) {
-	//PostBlueMix();
+	console.log(request);
+	response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
+	response.write(JSON.stringify(data));
 	igor = igor + 43;
 	response.end();
 });
-
+*/
 
 app.get('/addgoal', function(request, response) {
 	newgoal = 1;
