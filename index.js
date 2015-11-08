@@ -2,6 +2,8 @@ var express = require('express');
 var http = require('http');
 var app = express();
 var newgoal =  0;
+
+var igor = 30;
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -67,7 +69,8 @@ app.get('/goals', function(request, response) {
 
 
 app.get('/saveexpense', function(request, response) {
-	PostBlueMix();
+	//PostBlueMix();
+	igor = igor + 43;
 	response.end();
 });
 
