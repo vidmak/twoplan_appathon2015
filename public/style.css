@@ -90,6 +90,7 @@ button:active {
 }
 
 button:focus {outline:0;}
+
 div.top {
 	font-size: 20px;
 	font-weight: 400;
@@ -100,6 +101,11 @@ div.top {
 	background-color: #4B7DB9;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26);
 }
+
+.top > b {
+    font-size: 32;
+}
+
 
 p {
 	font-size: 20px;
@@ -206,4 +212,9 @@ h2
 .btn-a
 {
 	background-color: #4B7DB9;
+}
+
+
+.template{
+	display: none !important;
 }

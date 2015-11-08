@@ -1,4 +1,5 @@
 var express = require('express');
+var http = require('http');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -13,10 +14,60 @@ app.get('/', function(request, response) {
 	PostBlueMix(5);
 });
 
+app.get('/mydata', function(request, response) {
+
+
+	onclick="document.location+='main';return false;"
+
+	var url = 'http://twoplan.mybluemix.net/status?user=Igor';
+
+	http.get(url, function(res){
+		var body = '';
+
+		res.on('data', function(chunk){
+			body += chunk;
+		});
+
+
+		res.on('end', function(){
+			var r = JSON.parse(body);
+			console.log("Got a response: ", r);
+			var data = {
+				allaccounts: 1275,
+				myexpenses : 1100,
+				igor : r.rows[0].value,
+				our : r.rows[0].value + 1200,
+				maryna : 1200
+			}
+
+			response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
+			response.write(JSON.stringify(data));
+			response.end();
+		});
+
+	}).on('error', function(e){
+		console.log("Got an error: ", e);
+	});
+});
+
+
+app.get('/goals', function(request, response) {
+	data = { };
+	response.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin":"*" });
+	response.write(JSON.stringify(data));
+	response.end();
+});
+
+
+app.get('/saveexpense', function(request, response) {
+	PostBlueMix();
+	response.end();
+});
+
+
 app.listen(app.get('port'), function() {
 	console.log('Node app is running on port', app.get('port'));
 });
-
 
 function PostBlueMix(b) {
 	var request = require("request");
@@ -24,7 +75,8 @@ function PostBlueMix(b) {
 	var options = { method: 'POST',
 	url: 'http://twoplan.mybluemix.net/addExpenses',
 	headers: 
-	{ 'cache-control': 'no-cache' },
+	{ 'postman-token': '134ab788-11be-c622-737d-04383fd6f31d',
+	'cache-control': 'no-cache' },
 	body: '{\n"user": "Igor",\n"description": "some expense",\n"amount": 5\n}' };
 
 	request(options, function (error, response, body) {

@@ -21,10 +21,30 @@ $(document).ready(
        return false;
      }
      )
-    onclick="document.location+='main';return false;"
+
     $("#maintotal").change(function(){
-        $("#goaldate").val("September 2017");
+      $("#goaldate").val("September 2017");
     });
+
+
+    function refresh(){
+
+      $.ajax({
+        url: "mydata",
+        context: document.body
+      }).done(function(data) {
+        var template = $('#toptemplate').html();
+        Mustache.parse(template); 
+        var rendered = Mustache.render(template, data);
+        $('#toprender').html(rendered);
+      });
+      setTimeout(refresh,1000);
+    }
+
+
+    refresh();
+
+
     $("#btnshare").click(function(){
       var settings = {
         "async": false,

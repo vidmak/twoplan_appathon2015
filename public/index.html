@@ -5,21 +5,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="main" style="margin-top:-20px;">
-			<div class="top">	
-			    October 2015<br>
-				Expenses 1100, All accounts <b>1275</b>
-				<div id="chart" style="width:100%">
-					Igor 600, Our 1800, Maryna  1200
-				</div>
+			<div id="toptemplate" class="template">	
+			    <b>October</b> all accounts <b>{{allaccounts}}</b><br>
+				my expenses <b>{{myexpenses}}</b><br/>
+					igor <b> {{igor}} </b>, Our <b>{{our}}</b>, Maryna  <b>{{maryna}}</b>
 			</div>	
+			<div id="toprender" class="top"></div>
 			<br>
-			<h2>My goals</h2>	
+			<h2>Goals</h2>	
 			<ul>
-				<li style="background:#CDDC39;"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> <img src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Home-2-icon.png" width="50px"><br/>Moving 5000 in 6 month <b>in 25 days</b></li>
+				<li style="background:#CDDC39;"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> <img src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Home-2-icon.png" width="50px"><br/>Moving in 6 month <b>in 25 days</b></li>
 				<li><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-Group-icon.png" width="50px"> Ski trip<b>in 3 month</b></li>
 				<li><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Users-User-Male-3-icon.png" width="50px"> BMW i3 <b>7 years</b></li>
 			</ul>	
