@@ -1,6 +1,6 @@
 $(document).ready(
 	function(){
-		$("div#wrapper > div").hide();
+		//$("div#wrapper > div").hide();
     if (document.location.hash) {
       $('div#wrapper li > a[href=' + document.location.hash + ']').addClass('active');
       $('div#wrapper  div' + document.location.hash).show();
