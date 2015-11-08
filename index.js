@@ -32,11 +32,12 @@ app.get('/mydata', function(request, response) {
 		res.on('end', function(){
 			var r = JSON.parse(body);
 			console.log("Got a response: ", r);
+			igor =  r.rows[0].value;
 			var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,
-				igor : Math.round(r.rows[0].value,0),
-				our : Math.round(r.rows[0].value + 1200),
+				igor : Math.round(igor,0),
+				our : Math.round(igor + 1200,0),
 				maryna : 1200,
 				newgoal : newgoal
 			}
