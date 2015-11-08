@@ -23,8 +23,15 @@ app.get('/mydata', function(request, response) {
 		});
 
 		res.on('error', function (err) {
-                console.log("Got error: " + err.message);
-                cb(err, null);
+			console.log("timeout");
+               var data = {
+				allaccounts: 1275,
+				myexpenses : 1100,
+				igor : igor,
+				our : igor + 1200,
+				maryna : 1200,
+				newgoal : newgoal
+			}
          })
 
 		res.on('end', function(){
