@@ -1,6 +1,8 @@
 var express = require('express');
 var http = require('http');
 var app = express();
+var bodyParser = require('body-parser');
+
 var newgoal =  0;
 
 var igor = 30;
@@ -8,7 +10,8 @@ var igor = 30;
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -72,16 +75,16 @@ app.get('/goals', function(request, response) {
 
 
 app.post('/saveexpense', function(req, res){
-    console.dir(req.body);
-    igor = igor + 50;
-    res.send("test");
+    console.log(req.body.amount);
+    igor = igor + req.body.amount;
+    res.send("testpost");
 }); 
 
 
 app.get('/saveexpense', function(req, res){
-    console.dir(req.body);
+    console.log(req);
     igor = igor + 34;
-    res.send("test");
+    res.send("testget");
 }); 
 /*
 app.get('/saveexpense', function(request, response) {
