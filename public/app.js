@@ -28,7 +28,6 @@ $(document).ready(
 
 
     function refresh(){
-
       $.ajax({
         url: "mydata",
         context: document.body
@@ -37,8 +36,8 @@ $(document).ready(
         Mustache.parse(template); 
         var rendered = Mustache.render(template, data);
         $('#toprender').html(rendered);
+        setTimeout(refresh,300);
       });
-      setTimeout(refresh,1000);
     }
 
 
