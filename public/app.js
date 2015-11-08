@@ -36,7 +36,8 @@ $(document).ready(
         Mustache.parse(template); 
         var rendered = Mustache.render(template, data);
         $('#toprender').html(rendered);
-        setTimeout(refresh,300);
+        console.log("update.done");
+        setTimeout(refresh,1000);
       });
     }
 

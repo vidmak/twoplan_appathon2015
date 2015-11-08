@@ -32,7 +32,7 @@ app.get('/mydata', function(request, response) {
 		res.on('end', function(){
 			var r = JSON.parse(body);
 			console.log("Got a response: ", r);
-			igor =  r.rows[0].value;
+			var igor =  r.rows[0].value;
 			var data = {
 				allaccounts: 1275,
 				myexpenses : 1100,
