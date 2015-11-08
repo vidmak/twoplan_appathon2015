@@ -1,3 +1,4 @@
+'use strinct';
 var express = require('express');
 var http = require('http');
 var app = express();
@@ -77,7 +78,7 @@ app.get('/goals', function(request, response) {
 app.post('/saveexpense', function(req, res){
     console.log(req.body.amount);
     igor = igor + req.body.amount;
-    res.send("testpost");
+    res.send(req.body);
 }); 
 
 
