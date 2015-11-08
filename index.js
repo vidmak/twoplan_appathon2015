@@ -73,6 +73,7 @@ app.get('/goals', function(request, response) {
 
 app.post('/saveexpense', function(req, res){
     console.dir(req.body);
+    igor = igor + 50;
     res.send("test");
 }); 
 
